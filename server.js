@@ -14,7 +14,9 @@ app.set(db);
 app.use(cors());
 
 // Body parser middleware
-app.use(express.json());
+// app.use(express.json());
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb'}));
 
 // Use Routes
 app.use("/products", productRoutes); 
